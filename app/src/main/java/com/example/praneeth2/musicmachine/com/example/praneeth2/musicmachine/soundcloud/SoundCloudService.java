@@ -12,11 +12,14 @@ import retrofit.http.Query;
  */
 public interface SoundCloudService {
 
-    static final String CLIENT_ID = "1af249f9a50e6ad21f5fd94a9c7be1bc";
+    String PATH_TRACKS = "/tracks";
+    String QUERY_PARAM_CLIENT_ID = "?client_id=";
 
-    @GET("/tracks?client_id=" + CLIENT_ID)
-    public void searchSongs(@Query("q") String query, Callback<List<Track>> cb);
+    String CLIENT_ID = "1af249f9a50e6ad21f5fd94a9c7be1bc";
 
-    @GET("/tracks?client_id="+CLIENT_ID)
-    public void getRecentSongs(@Query("created_at[from]") String date, Callback<List<Track>> cb);
+    @GET(PATH_TRACKS + QUERY_PARAM_CLIENT_ID + CLIENT_ID)
+    void searchSongs(@Query("q") String query, Callback<List<Track>> cb);
+
+    @GET(PATH_TRACKS + QUERY_PARAM_CLIENT_ID + CLIENT_ID)
+    void getRecentSongs(@Query("created_at[from]") String date, Callback<List<Track>> cb);
 }

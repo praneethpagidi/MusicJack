@@ -11,15 +11,14 @@
         android:layout_width="@dimen/avatar_size"
         android:layout_height="@dimen/avatar_size"
         android:padding="@dimen/avatar_padding"
-        />
+        android:contentDescription="@string/track_thumbnail_image" />
 
     <TextView
         android:layout_centerVertical="true"
         android:id="@+id/track_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/vertical_inner_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        />
+        android:layout_marginStart="@dimen/vertical_inner_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 </RelativeLayout>

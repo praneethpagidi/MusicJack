@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 }
 
                 try {
-                    mMediaPlayer.setDataSource(selectedTrack.getStreamURL() + "?client_id=" + SoundCloudService.CLIENT_ID);
+                    mMediaPlayer.setDataSource(selectedTrack.getStreamURL() + SoundCloudService.QUERY_PARAM_CLIENT_ID + SoundCloudService.CLIENT_ID);
                     mMediaPlayer.prepareAsync();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
 
         SoundCloudService service = SoundCloud.getService();
-        service.getRecentSongs(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()), new Callback<List<Track>>() {
+        service.getRecentSongs(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.US).format(new Date()), new Callback<List<Track>>() {
             @Override
             public void success(List<Track> tracks, Response response) {
                 updateTracks(tracks);

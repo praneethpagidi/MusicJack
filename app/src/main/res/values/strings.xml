@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MusicMachine</string>
     <string name="search">Search</string>
+    <string name="title_picture">Title picture</string>
+    <string name="play_and_pause_button">Play and Pause Button</string>
+    <string name="track_thumbnail_image">Track Thumbnail Image</string>
 </resources>

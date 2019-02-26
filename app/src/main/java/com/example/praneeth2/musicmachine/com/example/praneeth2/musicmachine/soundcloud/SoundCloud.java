@@ -11,7 +11,7 @@ public class SoundCloud {
 
     private static final RestAdapter REST_ADAPTER = new RestAdapter.Builder()
             .setLogLevel(RestAdapter.LogLevel.FULL)
-            .setEndpoint("http://api.soundcloud.com")
+            .setEndpoint(API_URL)
             .build();
 
     private static final SoundCloudService SERVICE = REST_ADAPTER.create(SoundCloudService.class);
